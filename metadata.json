@@ -1,0 +1,17 @@
+{
+  "uuid": "mouse-follows-focus@edpe.nz",
+  "name": "Mouse Follows Focus",
+  "description": "Syncs mouse to windows moved by hoykeys.",
+  "shell-version": [
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.mouse-follows-focus",
+  "gettext-domain": "mouse-follows-focus",
+  "url": "https://github.com/edpenz/mouse-follows-focus"
+}

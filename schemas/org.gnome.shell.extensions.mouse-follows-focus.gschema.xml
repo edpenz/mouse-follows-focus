@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <enum id="org.gnome.shell.extensions.mouse-follows-focus.SnapLocation">
+    <value nick="relative" value="0" />
+    <value nick="center" value="1" />
+  </enum>
+
+  <enum id="org.gnome.shell.extensions.mouse-follows-focus.SnapTiming">
+    <value nick="smooth" value="0" />
+    <value nick="before" value="1" />
+    <value nick="after" value="2" />
+  </enum>
+
+  <schema id="org.gnome.shell.extensions.mouse-follows-focus"
+    path="/org/gnome/shell/extensions/mouse-follows-focus/">
+
+    <key name="snap-location" enum="org.gnome.shell.extensions.mouse-follows-focus.SnapLocation">
+      <default>'relative'</default>
+      <summary>Pointer snap location</summary>
+      <description>
+        Where to place the pointer in the focused window: “center” moves it
+        to the middle of the window, “relative” restores the position it last
+        had relative to that window.
+      </description>
+    </key>
+
+    <key name="move-on-resize" type="b">
+      <default>false</default>
+      <summary>Move pointer when the focused window is resized</summary>
+      <description>
+        Snap the pointer to the focused window whenever its size changes
+        (for example when tiling or maximizing), even if the pointer is
+        already inside it and focus did not change. Resizing with the
+        pointer is ignored.
+      </description>
+    </key>
+
+    <key name="snap-timing" enum="org.gnome.shell.extensions.mouse-follows-focus.SnapTiming">
+      <default>'before'</default>
+      <summary>Pointer snap timing</summary>
+      <description>
+        When to move the pointer relative to window animations: “before”
+        jumps to the final position immediately, “smooth” moves it along
+        with the animating window, “after” waits until the window has
+        stopped moving.
+      </description>
+    </key>
+
+  </schema>
+</schemalist>
