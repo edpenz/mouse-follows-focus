@@ -2,7 +2,7 @@ UUID := $(shell jq -r .uuid metadata.json)
 BUILD_DIR = build
 DIST_DIR = dist
 BUNDLE = $(DIST_DIR)/$(UUID).shell-extension.zip
-SOURCES = extension.js prefs.js stylesheet.css metadata.json $(wildcard schemas/*.gschema.xml)
+SOURCES = extension.js prefs.js $(wildcard lib/*.js) stylesheet.css metadata.json $(wildcard schemas/*.gschema.xml)
 
 .PHONY: all pack install uninstall enable disable prefs test-profile test-shell clean
 
@@ -10,7 +10,7 @@ all: pack
 
 $(BUNDLE): $(SOURCES)
 	@mkdir -p $(DIST_DIR)
-	gnome-extensions pack --force --out-dir=$(DIST_DIR) .
+	gnome-extensions pack --force --out-dir=$(DIST_DIR) --extra-source=lib .
 
 pack: $(BUNDLE)
 

@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 import Adw from 'gi://Adw';
-import Gio from 'gi://Gio';
 import Gtk from 'gi://Gtk';
 
 import { ExtensionPreferences } from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
@@ -57,14 +56,6 @@ export default class MouseFollowsFocusPreferences extends ExtensionPreferences {
             title: 'Pointer snap timing',
             subtitle: 'When the pointer moves relative to window animations',
         }));
-
-        const resizeRow = new Adw.SwitchRow({
-            title: 'Move pointer on resize',
-            subtitle: 'Also snap when the focused window changes size',
-        });
-        settings.bind('move-on-resize', resizeRow, 'active',
-            Gio.SettingsBindFlags.DEFAULT);
-        group.add(resizeRow);
 
         window.add(page);
     }

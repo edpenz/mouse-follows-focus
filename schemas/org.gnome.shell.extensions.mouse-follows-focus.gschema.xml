@@ -24,17 +24,6 @@
       </description>
     </key>
 
-    <key name="move-on-resize" type="b">
-      <default>false</default>
-      <summary>Move pointer when the focused window is resized</summary>
-      <description>
-        Snap the pointer to the focused window whenever its size changes
-        (for example when tiling or maximizing), even if the pointer is
-        already inside it and focus did not change. Resizing with the
-        pointer is ignored.
-      </description>
-    </key>
-
     <key name="snap-timing" enum="org.gnome.shell.extensions.mouse-follows-focus.SnapTiming">
       <default>'before'</default>
       <summary>Pointer snap timing</summary>
